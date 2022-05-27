@@ -1,8 +1,8 @@
 // This component will simply add utility functions to your developer console.
-import { useSubstrateState } from '../'
+import { useNylonState } from '../'
 
 export default function DeveloperConsole(props) {
-  const { api, apiState, keyring, keyringState } = useSubstrateState()
+  const { api, apiState, keyring, keyringState } = useNylonState()
   if (apiState === 'READY') {
     window.api = api
   }

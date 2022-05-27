@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Table, Grid, Button, Label } from 'semantic-ui-react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { useSubstrateState } from './substrate-lib'
+import { useNylonState } from './nylon-lib'
 
 export default function Main(props) {
-  const { api, keyring } = useSubstrateState()
+  const { api, keyring } = useNylonState()
   const accounts = keyring.getPairs()
   const [balances, setBalances] = useState({})
 

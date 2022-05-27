@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Feed, Grid, Button } from 'semantic-ui-react'
 
-import { useSubstrateState } from './substrate-lib'
+import { useNylonState } from './nylon-lib'
 
 // Events to be filtered from feed
 const FILTERED_EVENTS = [
@@ -12,7 +12,7 @@ const eventName = ev => `${ev.section}:${ev.method}`
 const eventParams = ev => JSON.stringify(ev.data)
 
 function Main(props) {
-  const { api } = useSubstrateState()
+  const { api } = useNylonState()
   const [eventFeed, setEventFeed] = useState([])
 
   useEffect(() => {
@@ -75,7 +75,7 @@ function Main(props) {
 }
 
 export default function Events(props) {
-  const { api } = useSubstrateState()
+  const { api } = useNylonState()
   return api.query && api.query.system && api.query.system.events ? (
     <Main {...props} />
   ) : null
